@@ -1,7 +1,7 @@
+# hrms/hrms/wsgi.py
 import os
 from django.core.wsgi import get_wsgi_application
 
-# Correct path to your settings
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hrms.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hrms.hrms.settings')
 
 application = get_wsgi_application()
