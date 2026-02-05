@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-sygo8qdiqjru4qf-2ftymhyfm23j8-(1h%=$6bl+t07^023zmm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'hrms-backend-3-w3tn.onrender.com', 
+    'hrms-frontend-rc8i.vercel.app',
+    'localhost', 
+    '127.0.0.1'
+]
 
 # Application definition
 
@@ -64,6 +68,13 @@ INSTALLED_APPS = [
     'attendance',
 ]
 
+
+# Add this at the bottom of settings.py
+CSRF_TRUSTED_ORIGINS = [
+    "https://hrms-frontend-rc8i.vercel.app",
+    "https://hrms-backend-3-w3tn.onrender.com"
+]
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -75,8 +86,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
 
+# Change this:
+
+CORS_ALLOWED_ORIGINS = [
+    "https://hrms-frontend-rc8i.vercel.app",
+    "http://localhost:5173", # For local Vite development
+]
 
 ROOT_URLCONF = 'hrms.urls'
 
